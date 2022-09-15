@@ -1,0 +1,182 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadPlanilha" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="SaidaPlanilha" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1788,1681</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>WindowsFormsIntegration</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="915,1616" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\lucas.marte\Downloads\Treinamento\" Name="CaminhoArquivo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: desafio reframework - Mestre RPA" sap:VirtualizedContainerService.HintSize="873,1524" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="8751466a-0fd2-4eb2-995c-bd7e758761ff" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="839,1304" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="ArquivoExist" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:FileExistsX DisplayName="File Exists" Exists="[ArquivoExist]" sap:VirtualizedContainerService.HintSize="797,140" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[CaminhoArquivo+&quot;Planilha.xlsx&quot;]" />
+            <If Condition="[Not(ArquivoExist)]" sap:VirtualizedContainerService.HintSize="797,747" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,580" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Baixar Planilha'" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8751466a-0fd2-4eb2-995c-bd7e758761ff" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://mestrerpa.com.br/desafio-reframework/" DesignTimeRectangle="1448, 295, 119, 18" ElementType="Text" FriendlyName="'Baixar Planilha'" FullSelectorArgument="&lt;webctrl aaname='Baixar Planilha' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Baixar Planilha' tag='SPAN' type='' class='elementor-button-text' check:innerText='Baixar Planilha' /&gt;" Guid="988d031d-8301-4291-a6dc-93b8cd4c61f3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAAWCAYAAADgreP7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARjSURBVGhD7Vi/b9s4FL4/NP+E5uxZtNzkJYsnL168CDggi2FAGSoEcHtQg8JBoaJhE+jqi5JYia3Efn2kHn9IomwlPUft2Q/4BpEU+fh95OMj/zj46wD22A3sxd4h7MXeIWxZbAeOxh34851jqftVMQQG3FIIz231/wFOXeh8cOFQfl/mI8JTCD1Rth0ftNjnIXZtsVUG6WME/sfDys8b8ZUmsYrAs9W/FSSZFqvObdtidyFciAEgiTt5WZtiZ8+ZgrZXDHw+hmSFv87HNImWYIhtzi3jvgnLgF261H7bYh/B8J7zimN+PcrL2hObwdBocDDqQfgkKiC7Gejy3wkVMgmjDni3tMRV9Nm22Bb8MmIjvFva4fdDo9wF7x8G6TKv4pY+hOC9N87n0iRcFuffKxwjoDYjDyLqI76Su8uBLosgoUXGLVuwYrg1/A2+RJDyXVoWU6JObI4ggNwrSaydaCf0IXqUsQ9tmQJjXX3umv99PoFooaNieu9DdyTb6c3DLqlsndjRur44GnBF2CA2JlifkAwhRgZRJIWUoQhtlUJ8zyCWgy1xh0hnKpNwIXjIi3iUcLCsNyUCF1qI3ndJagbJjAGby8kmMP6b+jaOHWWvEfsDHjWico3YxljZHP2ZJehZbkl8TH3J/8iWxWMw+7dP7V4iNlltXw25ImxO0LihoHwVc3FEW0VQAsEZlY0GMHkWhTgJWhQ2ktU46MxE7qoMJhdyIeFOF2cpLq7PskwvknTaK/WDZTcncMwz/pGjfTRRI7bzrgdBSuQ8T6Avyqtie3eiALJbT/XvXlGUsgiUTvtqx7vXOVO63cvEXt9XQ64IFrFxheBOZQQVHpa446WwNRjO8qZqECvJDgxuiGBKkLI7TWIdVASY0VGi/I3BL4Q1C6QftZbiYqNkySK2FWp8GQlr/qu0e2EYX9uXHRWuCA3O7EM4uSNxUh+OZPlpF/zbpHBmS1svNiLAycj/VihWeRHxxKmUDyiriL1+4gKG2IVsfBFDNPVhYOYZVqId6ERjYMbZqa1lsZtwRWiUoClnZMbKQzY5nM0jGDMffMRknpdtFPtMhm9u5bPFBT93BP9jEF7lfY9nRPTPiF32w4oq0e43mVjicTYNhD8+Epx71KbYDbkivE5s+VhSIq9ZGMfkjtplmHgIewjAlfUfpR/F8Fwfxrcttn4EiZkRASrjtyB2U64Im8UedWH8KCpwbArj0rlnnXk7730VmteJ7VxM8h3Br19n8tplPDAoP4zk77SvCH97sbU4ybW8Gh5CXxKqxm9B7KZcESxil8419cqEA3+ilV04c/N2ptWLbRBHVxaV1WI2PBALB9tIZ6lv7QPam4ttXm+Im8L52KLYTbkiWMUuWM3bOH9kUAkLb4OX/RMjfIjsujSJ45iuDuZd3Jg8XyTiP9zx4YP2RjzWXJcIeUOx+dnoTeP84YbbUwxhFJTatSE2oglXBC32Hv977MXeIezF3iHsxd4h7MXeGRzAD1vrG5yWTkmzAAAAAElFTkSuQmCC" InformativeScreenshot="29a4e674470d47c375e3f10e34e24284.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='desafio reframework - Mestre RPA' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1419, 281, 176, 46" ElementType="Text" FriendlyName="'Baixar Planilha'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' class='elementor-button-link elementor-button elementor-size-sm' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Baixar Planilha &amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:innerText='Baixar Planilha' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALQAAAAyCAYAAAD1JPH3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVlSURBVHhe7Z1Bb5tIGIb3h/ZPcKxyz4XLnnzJxSdffPHF0kq5WK7IoSiS25UbVa4qVg1NxK43JDaJTWJ/OwPzDQMeXNKtAY++V3oOHQaYzDwMA1Tyb0ChGBQSmmJUckK/89/BW+ctvPnjDUG0Hu4qd1aNFJpv0O1EEG1HlVoKTTMzcaxwdzFSaF1FgjgWMCQ0YQQYEpowAgwJTRgBhoQmjABDQhNGgCGhCSPAkNCEEWBIaMIIMCQ0YQQYEpowAgwJTRgBxkChLTiddOD395ZmW1sZgZ+MQgTTK932X8CFDZ2PNpzgv6/TM8LzFHpJWQ1tOCCYZoW+mrLu02QbQ/TkgfPpRL/fPr6Jgdp6MNRtrwsURpPdv+3QMnVhuk5OAGHQSctI6AOgCB2/xJIsP9G5VxMIt2zX1UQMVEMoQqt/W8zbliQG/9oW9Q8t0ymMFrxf2Tm/naZlJPQBkEL7MFLLxz2YPicbIL4b5Pc5FnaEEYw7MLwXl7G8izQgEwl9AMqEZgzvxUy9GCnlNgz/9iHapJt4oscpDD8o6+XCQNl+kP57y87hijrjIXjiGMENzpIWdH0PQnEh8cRrP780UNrr/uVBxGfborBImdAc14W0VSiPXiZr6oD3hPcwlk0Evt/N1sHqfl/PwVtnd7do4UB3jPWyCcK/FmX7hPb2HYtToa9qBtNCodlD3Wc24IlwMXgeyoq3TZZtBMHChwA7dMNmOuzwnYGywX1Mi/hsb7Gy3lxIss5k6/2D4sQQLn3wVzigIUz+FMdWlkgyPyP0R7YsSjbuEVo5V7xi7VmGrGVpwuBMHAv3E9nkl2zxv31R7zVCi5Qeq2Jf1QymnQ+FPExaPhtxAZO6UoIQ3EtRNh7A7CUpZAMlxNeJJM/DOnyGs2MMsy94sbAZO1nbsgvoK5ZlF0I07xWOw8ruzuGMv0kZW1kbVUqEtt73wI2EAC8z6Cflu0IPH5ICiO+H8vj2jbjbaCSM5n05c9u3aU9l9V4n9P5jVeyrmsG0RGh2pbMZ1xfIW9mGzdwobwmjZVpVdqRWJAsGd0Ii8VAWP2SilCFn8qVY9sj2BuDkbsEasB2lidgFJR7QNEJrkefHO1rJfjv1Xrnk2HssPTt9VTOYlq6hT+D8QQgYOXCK5RddcO7D3Boas19ohssGDPfbMiGLFwp/WCusz2V2hN4/uAmK0Lm3HOsAvLkDA3Xdr5XJgo43AV9Zy2ZpWOgqfVUzmNY+FMoOxzcBfHkhBiVeeTDxHXAYs1Va9kOhL3GpwVNc69ngpA1h+/kwvUmPPVkKmf6P0MV2aNmVyf6OD7Ns6TV3k/Y4TKK0RU0KXbGvagZzPELjB5OCINWWHOyBUtSL2cNOkkcXbNz+CduRX0qULzkOLXT2ISTwlZl85/wNCF21r2oG006hx12YPCUbWP+KJQcOwEv2RsP64MhlxD6hrS+zdGbjr+4u8ZWd8pFBtkN54LzoS6nqFzoTMLzF14on0Edp5PkbELpqX9UMpiVCF9aZ8msa69zPYobKrYHTemrKhVbkEK+75NuClxkMkouD1cEBEcfO2sBSu9DqqzHRN7n1aoNCV+2rmsG0RuhcSv4vB//QIB+SeJ2FA+fKrS55a1EYqLNAvHZS31UrA8wvhGQ/NnNPH7PWJB9sbguDXqPQfK06nAfpxxue5wCmnluo14TQjCp9VTOYZoUmiF8EhoQmjABDQhNGgCGhCSPAkNCEEWBIaMIIMCQ0YQQYEpowAgwJTRgBhoQmjABDQhNGgCGhCSPAkNCEEWBIaMIIMFJo+uFN4ljR/vAm/TQycaxofxqZh2+gmZo4Frirqsw8OaEplGMPCU0xKAD/Afj0fqEzLL+iAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Nome'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,224" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="8751466a-0fd2-4eb2-995c-bd7e758761ff" Text="[CaminhoArquivo+&quot;Planilha.xlsx[k(enter)]&quot;]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="136, 701, 1368, 17" ElementType="InputBox" FriendlyName="'DesafioReframework.xlsx'" FullSelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="046e22d8-6e30-4e16-8403-55279c984e72" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABVwAAAAVCAYAAAC67yW+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOVSURBVHhe7dy9bdwwGAbgjJMRDA/kGbJB2hvDE1yZKQ5IYSCdm4MrV+6UoyRKn6g/nuwiAR4CDxLx+PNJSvWC0beHh4cGAAAAAIDPE7gCAAAAAHyRxcD124/fMGh+fp/9GwEAAAAA5gSu7BK4AgAAAEAdgSu7BK4AAAAAUGclcH1tzs20vfz6MwviPu35vVv8+tY8nt6al+ajOZ0Wxk3Mazs/L40rxL2Wfv9vpPuveU5Ljs0VuAIAAABAnY3ANQZzfch5eR1CuM/r1qwKSyeK2tog9b15mo2Lju71LyrfzT2OzRW4AgAAAECdysD1pj2Buhds3uNocFjOq1nn6F7/os/cy7G5AlcAAAAAqFMfuP7405yu4ZRoG8DmloPYbkxueezTpe9IrT0lm9YfW/e5gmLPyfrxdGoxLp1wjZ8JmNW1vtf58nHr6Wqf1xj2eh7XTHU8/krzujb51MLCM0nrrtaexue9du53rDWukf5+a5OTx907GOqaPJ84t3xX6/MErgAAAABQ52DgWvz+/N4FdSmk2/zsQBkWxj3K30Lo2IaR09+GNtmvWDPXtbhXEZYO4th+rxxYpvuL89rrHDav7B2fSeq7fgzzU3A71rd9v2OteZ/4PkppTA5nc325v1831rUzT+AKAAAAAHXuDFz7vuI0ZttSeNf3j+Fgrw0mc4tBYtwjXLfrxKAwnhTdGLdW19Zeee69NZbXW8+kD2yfLrex6bRse10+z4r7DXu+xNOoS/r7mQay83rX3lWcJ3AFAAAAgDrHvuG6EBBG+b/ct6HdZGwIGVeCxDEMrAsgx1Oiy/M6G3ul6yM1ltere+f1bmOHoPU2Lo3PJ2fvuN/uumlPys5PqAZ7gWvfN3lXK/MErgAAAABQpzJw7UK+MYTrQ7+NE5ZDEJoCvEmwmNdd2iP+FvabBJL78+Z1bc25OVRjeZ3+vvxM2mdxHYPhdH2+5M8djHPvvd8Uyk7XiLWk+fnP+dzuujOG1svzBK4AAAAAUGcjcI1tHtJ1oWBo6bRlfzqyazmwSyc6+67re3OuPT06WX9j3E17SnMSmIZW9UmBgzWW14t75/5yXFwn9+VWu2dfd3vvub/ri+Hu8Gzi3Nm7Wp8ncAUAAACAOiuBaw73QOAKAAAAALUEruwSuAIAAABAHYEruwSuAAAAAFBnMXAFAAAAAOB+AlcAAAAAgC8icAUAAAAA+CICVwAAAACAL/HQ/AXjBXkfhfNTPQAAAABJRU5ErkJggg==" InformativeScreenshot="5903f95bba854b8bfb5d346ef6e6a177.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Salvar como' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="18, 698, 115, 23" ElementType="Text" FriendlyName="'Nome'" FullSelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;ctrl name='Painel do Explorer' role='pane' /&gt;&lt;ctrl name='Painel de Layout de Pastas' role='pane' /&gt;&lt;ctrl name='Painel de Detalhes' role='pane' /&gt;&lt;ctrl name='Nome:' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;ctrl name='Painel do Explorer' role='pane' /&gt;&lt;ctrl name='Painel de Layout de Pastas' role='pane' /&gt;&lt;ctrl name='Painel de Detalhes' role='pane' /&gt;&lt;ctrl name='Nome:' role='text' automationid='' check:text='Nome:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHcAAAAbCAYAAABGDxCrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEtSURBVGhD7ZaNDYMgEEY7FtMwC7MwCps4CeU4kT9r1MQ0/fpd8oIclCY8OXkZYyLBhHKBoVxASlAuIBLSUi4glAsM5QJDucBQLjCUexsXg+xecDv5JXrb5r4D5d5GJS6L+J3zlPvTrBKdT4J9tGOecn+ZKtGl+rx4O+Vz3yb5eZs16ilvXo5mzPo6u645rhOik5z+cfNi9UhIS7mXaSUePTdCs6B+bJMjonJ3FZr7q8RuTR3L8yj3KeYN18tVk88yiyBFp8nz8Puj/nD6c0wXuRkJaSn3MqMMG6WiBveU3H6dM1DubUYZie2ElbzMKTLL+IdSe9jXdbpvsMCy/BSjDEUvRE2+K6lnZe70u3VSSFmm3P+FcoGhXGAoFxjKBYZygaFcYEpQLjCUC4uJb2Fn1yltYpqAAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <Delay DisplayName=" Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,212" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;O arquivo já foi baixado&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[SaidaPlanilha]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="797,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Planilha1" WorkbookPath="[CaminhoArquivo+&quot;Planilha.xlsx&quot;]" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InsertOrquestrador workflow" sap:VirtualizedContainerService.HintSize="797,116" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InsertOrquestrador.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="SaidaPlanilha">[SaidaPlanilha]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="In_Config">[in_Config]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAALiMAAC4jAXilP3YAAARNSURBVEhLrVZrTFxFFL5QiTHxlVhS/EF9VNPaGIrU2kJRQGuKptFEq6maJqWJmtDEpNEYFS1ion8aQmsoCRR6hXbLFpRa6iM0QbONjZG6IfADarCQtLzB7i573/fOPX5zLyGbskNh9dvJnTMzZ843c865Z69EAjDG5iUPruveJCwAMzcpJ0JIkGjIN+HP4OkLy4SQIBGwvkCwUiyLYKWnTsSyCP4LliJY5qmhBgfODxbhFgSJHI7jmKZpWRaExHnI/wMBTBiGoSiKpmmgAYc/72NBbTHEBIZNLEYWafiRTXNEqjpyQx0cnyFN5UOy5tw5F4ssQs7Kb2Dyh8J0CDGbDHRTRMFxtWPWnPaWbdJMiqAjiiv8mRxCgmnuA02JxnSi3uHYF0d7Xqj4dldwaldwovST9qojv/eORHRiagx3UWbE2SAkiNq4tUIuhUeocHfj+u0N95c0S0VtUuGprGJ5Q+HxZ15vvDwM90M3rvp7kkEcA9g3VMuiQ41/r8lvOHTkWmMw2tA519ylHw/e+Pjw1cxtdZVNQ6aF2ES4sgBCAjfKyLQ1Wy+v7nut6kpoyD33Y2h0Ynhs8mpH5y/dgwYmy6t744ZCOIX4CkICzUDmWy7FyiovrXu5Qw6Nd4cnrkxFByZnL/SMyqHR9a927qu86CLOzHBSiQF/IAcn3/6057aNgYd3HsspDez9vP9g7djml86s3VGT8XigvCpMNG45kYi3JSmEBA5ZjoHDUb3869qnPrwzT05/8mT2nmDmnlap4HR6Tn3WtvdPng+rOtkuDuJldTIICUw7igxxGQ1N0gdHB9/8cubpgwOPlf2wcX/X1gN9ZdXR9w73YgnOcWwoItbJISRADiH/piPxwM9jj+yszy3rznzx9KottXfny6ufbcl9q+vBopozP103TEZOjFgKBLx+/QOS6pYhKbti8zuh2wvq0nPljJyWe4rlda90SA99Vtc24r3CETJWXiq0iI4Ugmubvp9evfVYwYGeOwqaV21qkx49de/z7XnvXnpgh9zUORFnjs2iWjyFYsfPZMMDobD63L6O+4q+SXtCTstrT9tyVsqT15S2Fu9vu/BnVEMlJTuVNNUskwfZsmdirCYwkF0iS5tOSHknMrYHpQ0NOP5XjZejCkMa2KajI5MEEBKYZJi65UVP67/O3qjov6v4Oym/Vsr9Oqvk/N6P+gauWeQqpOukoy6mEGSED/UOeUoMBsZmlYt//NV69jc0CBh6/zieAtRSKNd409DgAPBARIeAqzZvEDD0CGyu4GmKICaAVxED12Gu6fDG4GffFBdchkksQcHXFEEcAwu2sREuwnFR9Sz+8cX464HOe3XRwMWgBuX5bYsgJPCPhf2w5ZnjvuIe51Hhsj/vKSxxgSVc5AGfC7Zt2paRvNlw0RLGOcQu0g3H4mXslg1qUJ7ftghLBJlHgIcA1cwiy0RY5y1CwBCT/qo3iS4ZiP4FEMwgbOhsXiYAAAAASUVORK5CYII=" InformativeScreenshot="0692da95977896c2026127054ad7a1a5.png" Selector="&lt;html app='chrome.exe' title='desafio reframework - Mestre RPA' /&gt;" Url="[in_Config(&quot;UrlNavegador&quot;).ToString]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
